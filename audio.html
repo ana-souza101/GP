@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo2.jpg" sizes="16x16" type="image/png">
+  <title>Inclusão em Áudio</title>
+</head>
+<body>
+  <nav>
+    <a href="./index.html">Voltar</a>
+  </nav>
+  <h1>Digite seu texto. </h1>
+  <br>
+  <textarea id="texto" placeholder="Digite o texto aqui..."></textarea>
+  <button onclick=" LerTexto()"> Ler Texto</button>
+
+  <script>
+    function lerTexto() {
+            const texto = document.getElementById('texto').value;
+            if (texto.trim() !== '') {
+                const discurso = new SpeechSynthesisUtterance(texto);
+                discurso.lang = 'pt-BR';
+                window.speechSynthesis.speak(discurso);
+            } else {
+                alert('Por favor, digite algum texto.');
+            }
+        }
+    </script>
+
+
+  
+</body>
+</html>
